@@ -1,0 +1,115 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical" >
+	    <LinearLayout
+	        android:id="@+id/clientIdGroup"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/clientIDTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dip"
+            android:text="clientId" />
+
+        <TextView
+            android:id="@+id/clientId"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.22"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/serverGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp" >
+
+        <TextView
+            android:id="@+id/serverTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dip"
+            android:text="server" />
+
+        <AutoCompleteTextView
+            android:id="@+id/serverURI"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.22"
+            android:ems="10"
+            android:hint="input server URI"
+            android:inputType="text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/portGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp" >
+
+        <TextView
+            android:id="@+id/portTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="35dip"
+            android:text="port" />
+
+        <EditText
+            android:id="@+id/Mqttport"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.22"
+            android:ems="10"
+            android:hint="1883"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cleanSessionGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/cleanSessionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="35dip"
+            android:text="cleanSession" />
+
+        <CheckBox
+            android:id="@+id/cleanSessionCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="clean session"
+            android:text="" />
+    </LinearLayout>
+    
+     <LinearLayout
+        android:id="@+id/StatusGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:layout_below="@id/cleanSessionGroup" >
+
+        <TextView
+            android:id="@+id/StatusTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="35dip"
+            android:text="Status" />
+
+        <TextView
+            android:id="@+id/StatusHintView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unknown" 
+            />
+   		 </LinearLayout>  
+ </LinearLayout>

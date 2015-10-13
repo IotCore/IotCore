@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/card_outer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+	<LinearLayout 
+	    android:id="@+id/gpio"
+	    style="@style/card_inner"
+	    android:orientation="horizontal"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+    >
+    <TextView 
+        android:id="@+id/gpio_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:layout_weight="3"
+        android:text="GPIO"
+        android:textColor="@color/white"
+        />
+    <Button
+        android:id="@+id/gpio_high"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="10sp"
+        android:text="high"
+        />	
+    <Button
+        android:id="@+id/gpio_low"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="10sp"
+        android:text="low"
+        />	    
+    <Button
+        android:id="@+id/gpio_pwm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="10sp"
+        android:text="pwm"
+        />
+   	</LinearLayout>    
+
+</LinearLayout>

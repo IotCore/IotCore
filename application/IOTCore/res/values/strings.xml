@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IOTCore</string>
+<!-- actionbar title -->
+    <string name="title_section_device">My Devices</string>
+    <string name="title_section_controller">Controller</string>
+    <string name="title_section_gpio">GPIO Controller</string>
+    <string name="title_section_camera">Camera Controller</string>
+    <string name="title_section_settings">Settings</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+<!-- menu -->    
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_add_device">Add Device</string>
+    <string name="action_capture">Capture</string>
+    <string name="action_connect">Connect</string>
+    <string name="action_qr_scan">Scan QRCode</string>
+    
+<!-- common -->
+    <string name='dateFormat'>dd/MM/yy \'at\' HH:mm:ss</string>
+   <string name="notification_hint">Touch to view all devices</string>
+   
+<!-- mqtt -->   
+    <string name="messageRecieved">Received message %1$s &lt;br/&gt; &lt;small&gt;Topic: %2$s &lt;/small&gt; </string>
+    <string name="timestamp">&lt;br/&gt; &lt;small&gt; %1$s &lt;/small&gt;</string>
+    <string name="notification">%1$s has received %2$s on topic %3$s</string>
+    <!-- <string name="toast_pub_success">Published message: %1$s to topic: %2$s</string> -->
+    <string name="toast_pub_success">Published message success!</string>
+    <string name="toast_sub_success">Subscribed to %1$s</string>
+    <string name="toast_unsub_success">unSubscribed to %1$s</string>
+    <string name="toast_disconnected">Disconnected</string>
+    <!-- <string name="toast_pub_failed">Failed to publish message: %1$s to topic: %2$s</string>-->
+    <string name="toast_pub_failed">Failed to publish message!</string>
+    <string name="toast_sub_failed">Failed to subscribe to %1$s</string>
+    <string name="toast_unsub_failed">Failed to subscribe to %1$s</string>
+    <string name="connection_lost">%1$s has lost connection to %2$s</string>
+    <string name="failure_disconnect">Disconnect failed.&lt;br/&gt; &lt;small&gt;Reason: %s&lt;/small&gt; </string>
+    <string name="failure_connect">Client failed to connect.&lt;br/&gt; &lt;small&gt;Reason: %s&lt;/small&gt;</string>
+    <string name="client_connected">Client connected successfully</string>
+    
+<!-- settings -->
+	<string name="missingOptions">ClientID, server address or Port number is missing. </string>    
+<!-- MainActivity -->
+	<string name="again_exit">Press back again to exit!</string>
+	
+<!-- AddDeviceActivity -->
+<!-- activity_adddevice -->    
+	<string name="add_device">Add Device</string>
+	<string name="found_device">Found a device:</string>
+	<string name="unknown">unknown</string>
+	<string name="preparing">Preparing:  read the install guide, put the device into config mode.</string>
+	<string name="step1">Success:  found a device.</string>
+	<string name="step2">Networking:  use this app to configure the device and make it connect to a wifi hotspot. </string>
+	<string name="step3">Failed:  failed to config the device.</string>
+	<string name="scan_prompt_info">Align the QR Code/bar code within the frame to scan</string>
+	<string name="device_info">input the device information</string>
+	<string name="product_key">product ID</string>
+	<string name="product_name">product name</string>
+	<string name="product_key_check">"Product key can not be empty!"</string>
+	<string name="product_name_check">Please name the device.</string>
+	<string name="hint_key">product id</string>
+	<string name="hint_name">name the device</string>
+	<string name="config_info">connect the device to wifi hotspot</string>
+	<string name="device_already_exist">device already exists!</string>
+	<string name="config_status">status</string>
+	<string name="wifi_ssid">SSID</string>
+	<string name="wifi_password">password</string>
+	<string name="wifi_security">security</string>
+    <string name="start_config">Start</string>
+    <string name="stop_config">Cancel</string>
+    <string name="add_config">Add</string>    
+    <string name="prepared">Prepared</string>
+	<string name="start_config_status">Press start button to config device</string>
+    <string name="cancel_config_status">configing......</string>
+    <string name="add_config_status">Press add button to add device</string>    
+    <string name="success_config_status">Config device successfully</string>    
+    <string name="please_input_password">Please input password first!</string>
+    <string name="please_select_wifi">Please select a Wifi hotspot first!</string>
+    <string name="security">Security</string>
+    <!-- Value for the wifi security.  This means no encryption. -->
+    <string name="wifi_security_open">Open(no need password!)</string>
+    <!-- Value for the wifi security -->
+    <string name="wifi_security_wep">WEP</string>
+    <!-- Value for the wifi security -->
+    <string name="wifi_security_wpa">WPA</string>
+    <!-- Value for the wifi security -->
+    <string name="wifi_security_wpa2">WPA2</string>
+    <!-- Value for the wifi security -->
+    <string name="wifi_security_wpa_eap">WPA-EAP</string>
+    <!-- Value for the wifi security -->
+    <string name="wifi_security_ieee8021x">IEEE8021X</string>    
+    <string name="please_type_passphrase">Wireless password</string>
+    <string name="wifi_show_password">Show password.</string>
+
+    <string name="wifi_change_password">Change password</string>
+    <string name="button_change_password">Modify</string>
+    <!-- An edit field's grayed out value when it has not been modified -->
+    <string name="wifi_password_unchanged">(unchanged)</string>
+    <!-- Button caption to save a configuration wifi -->
+    <string name="wifi_save_config">Save</string>
+    <string name="wifi_connect_to">Connected to %s</string>
+    <string name="failed_connect_to">Failed to connect to %s !</string>
+    <string name="password_error">check the password of %s ！</string>
+     <!-- Wi-Fi IP address label -->
+    <string name="ip_address">IP address</string>
+    <!-- Label for the signal strength -->
+    <string name="signal">Signal strength</string>    
+
+
+
+</resources>

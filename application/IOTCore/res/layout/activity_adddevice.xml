@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	<RelativeLayout
+		android:id="@+id/steps"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_marginLeft="16dp"
+	    android:layout_marginRight="16dp"
+	    android:orientation="vertical" >
+	    <LinearLayout 
+	        android:id="@+id/prepare"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+		    android:paddingTop="6dp"
+	        android:orientation = "vertical"
+	        >
+		    <TextView 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="10dp"
+		        android:textColor="@color/night"
+		        android:layout_gravity="left"
+		        android:textSize="16sp"
+		        android:text="@string/preparing"/>	
+		         
+		 	<View 
+	 		    android:layout_width="match_parent"
+	 		    android:layout_height="1dp"
+	 		    android:padding="5dp"
+	 		    android:background ="#5ff0ad4e" />    
+	    </LinearLayout>
+	    
+	    
+	    <LinearLayout 
+	        android:id="@+id/network_info"
+	        android:visibility="invisible"
+	        android:layout_below="@id/prepare"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+		    android:paddingTop="10dp"
+	        android:orientation = "vertical"
+	        >
+		    <TextView 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="10dp"
+		        android:textColor="@color/night"
+		        android:layout_gravity="left"
+		        android:textSize="16sp"
+		        android:text="@string/step2"/>	
+		         
+		 	<View 
+	 		    android:layout_width="match_parent"
+	 		    android:layout_height="1dp"
+	 		    android:padding="5dp"
+	 		    android:background ="#5ff0ad4e" />    
+
+		    <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation = "horizontal"
+		        android:paddingTop="6dp"
+		        android:paddingLeft="20dp"
+		        android:paddingRight="20dp"
+		        >	
+
+				    <TextView
+				        android:layout_width="0dp"
+				        android:layout_height="wrap_content"
+				        android:layout_gravity="center"
+				        android:layout_weight="2"
+				        android:text="@string/wifi_ssid"
+				        android:textColor="@color/night"
+				        android:textSize="14sp" />
+
+			        <Spinner 
+			        	android:id="@+id/networkInput"
+			        	android:layout_width="0dp"
+			        	android:layout_height="wrap_content"
+			        	android:layout_gravity="bottom|start"
+			        	android:gravity="bottom"
+						android:layout_weight="6"
+						android:textColor="@color/night"
+			        	android:textSize="14sp"/>
+		    	<TextView
+		    	    android:id="@+id/FiWi_scan"
+		    	    android:layout_width="0dp"
+		    	    android:layout_height="wrap_content"
+		    	    android:layout_gravity="bottom|center"
+		    	    android:layout_weight="1"
+		    	    android:clickable="true"
+		    	    android:textColor="@color/night"
+		    	    android:textSize="@dimen/text_size_20"
+		    	    android:visibility="gone"/>
+	    </LinearLayout>
+    
+		<LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation = "horizontal"
+		        android:paddingTop="6dp"
+		        android:paddingLeft="20dp"
+		        android:paddingRight="20dp"
+		        >	
+
+		    <TextView
+		    	    android:id="@+id/wifi_code"
+		    	    android:layout_width="0dp"
+		    	    android:layout_height="wrap_content"
+		    	    android:layout_gravity="center"
+		    	    android:layout_weight="2"
+		    	    android:text="@string/wifi_password"
+		    	    android:textColor="@color/night"
+		    	    android:textSize="14sp" />
+		    	
+		    	<com.vigek.iotcore.view.ChangingAwareEditText 
+		    	    android:id="@+id/input_wifi_code"
+		    	    android:layout_width="0dp"
+		        	android:layout_height="wrap_content"
+		        	android:layout_weight="6"
+		        	android:singleLine="true"
+		        	android:textColor="@color/night"
+		        	android:textColorHint="@color/night"
+		        	android:textSize="14sp"
+		        	android:inputType="text|textPassword"/>
+		    	<TextView
+		    	    android:id="@+id/wifi_edit"
+		    	    android:layout_width="0dp"
+		    	    android:layout_height="wrap_content"
+		    	    android:layout_gravity="bottom|center"
+		    	    android:layout_weight="1"
+		    	    android:clickable="true"
+		    	    android:textColor="@color/night"
+		    	    android:textSize="@dimen/text_size_20"
+		    	    android:visibility="gone"/>      
+	     </LinearLayout>
+	    
+		<LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation = "horizontal"
+		        android:paddingTop="6dp"
+		        android:paddingLeft="20dp"
+		        android:paddingRight="20dp"
+		        android:visibility="gone"
+		        >	
+
+		    	<TextView
+		    	    android:layout_width="0dp"
+		    	    android:layout_height="wrap_content"
+		    	    android:layout_gravity="bottom|end"
+		    	    android:layout_weight="2"
+		    	    android:text="@string/wifi_security"
+		    	    android:textColor="@color/night"
+		    	    android:textSize="14sp" />
+		    	
+		    	<TextView 
+		    	    android:id="@+id/wifi_security"
+		    	    android:layout_width="0dp"
+		        	android:layout_height="wrap_content"
+		        	android:layout_gravity="bottom|start"
+		        	android:paddingLeft="10dp"
+		        	android:layout_weight="6"
+		        	android:singleLine="true"
+		        	android:textColor="@color/night"
+		        	android:textSize="14sp"/>
+		    	<TextView
+		    	    android:id="@+id/wifi_type"
+		    	    android:layout_width="0dp"
+		    	    android:layout_height="wrap_content"
+		    	    android:layout_gravity="bottom|center"
+		    	    android:layout_weight="1"
+		    	    android:clickable="true"
+		    	    android:textColor="@color/night"
+		    	    android:textSize="@dimen/text_size_20"
+		    	    android:visibility="invisible"/>       
+	     </LinearLayout>		    
+
+	  </LinearLayout>
+	  <LinearLayout 
+	        android:id="@+id/device_info"
+	        android:layout_below="@id/network_info"
+			android:visibility="invisible"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+		    android:paddingTop="10dp"
+	        android:orientation = "vertical"
+	        >
+		    <TextView 
+		        android:id="@+id/config_result"
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="10dp"
+		        android:textColor="@color/night"
+		        android:layout_gravity="left"
+		        android:textSize="16sp"
+		        android:text="@string/step1"/>	
+		         
+		 	<View 
+	 		    android:layout_width="match_parent"
+	 		    android:layout_height="1dp"
+	 		    android:padding="5dp"
+	 		    android:background ="#5ff0ad4e" />    
+
+		    <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation = "horizontal"
+		        android:paddingTop="6dp"
+		        android:paddingLeft="20dp"
+		        android:paddingRight="20dp"
+		        >	
+			        		           
+			    <TextView
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="bottom|end"
+			        android:layout_weight="3"
+			        android:text="@string/product_key"
+			        android:textColor="@color/night"
+			        android:textSize="14sp" />
+				        
+				<EditText
+				    	    android:id="@+id/input_serial_num"
+				    	    android:layout_width="0dp"
+				    	    android:layout_height="wrap_content"
+				    	    android:layout_weight="6"
+				    	    android:layout_gravity="bottom|start"
+				    	    android:hint="@string/hint_key"
+				    	    android:textColorHint="@color/night"
+				    	    android:singleLine="true"
+				    	    android:enabled="false"
+				    	    android:editable="false"
+				    	    android:textColor="@color/night"
+				    	    android:textSize="14sp" />
+	
+		    	<TextView
+		    	    android:id="@+id/bar_scan"
+		    	    android:layout_width="0dp"
+		    	    android:layout_height="wrap_content"
+		    	    android:layout_gravity="bottom|center"
+		    	    android:layout_weight="1"
+		    	    android:clickable="true"
+		    	    android:textColor="@color/night"
+		    	    android:textSize="@dimen/text_size_20"
+		    	    android:visibility="gone"/>
+
+	    	</LinearLayout>	
+	    	
+		    <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation = "horizontal"
+		        android:paddingTop="6dp"
+		        android:paddingLeft="20dp"
+		        android:paddingRight="20dp"
+		        >	
+			        		           
+			    <TextView
+			        android:layout_width="0dp"
+			        android:layout_height="wrap_content"
+			        android:layout_gravity="bottom|end"
+			        android:layout_weight="3"
+			        android:text="@string/product_name"
+			        android:textColor="@color/night"
+			        android:textSize="14sp" />
+				        
+				    	<EditText
+				    	    android:id="@+id/devNameInput"
+				    	    android:layout_width="0dp"
+				    	    android:layout_height="wrap_content"
+				    	    android:layout_weight="6"
+				    	    android:layout_gravity="bottom|start"
+				    	    android:hint="@string/hint_name"
+				    	    android:textColorHint="@color/night"
+				    	    android:singleLine="true"
+				    	    android:textColor="@color/night"
+				    	    android:textSize="14sp" />
+
+		    	<TextView
+		    	    android:id="@+id/bar_scan2"
+		    	    android:layout_width="0dp"
+		    	    android:layout_height="wrap_content"
+		    	    android:layout_gravity="bottom|center"
+		    	    android:layout_weight="1"
+		    	    android:clickable="true"
+		    	    android:textColor="@color/night"
+		    	    android:textSize="@dimen/text_size_20"
+		    	    android:visibility="gone"/>
+
+	    	</LinearLayout>			    
+	    </LinearLayout>
+	   <RelativeLayout
+	       android:id="@+id/layout6"
+	       android:layout_width="match_parent"
+	       android:layout_height="match_parent"
+	       android:layout_below="@id/network_info"
+	       android:layout_gravity="bottom">
+		
+			<LinearLayout
+			    android:id="@+id/config_status"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:layout_centerVertical="true"
+			    android:gravity="bottom|center_horizontal"
+			    android:orientation="vertical"
+			    android:paddingLeft="20dp"
+			    android:paddingRight="20dp"
+			    android:paddingBottom="80dp">
+			
+			 <ProgressBar
+			     android:id="@+id/progress"
+			     style="@style/loading"
+			     android:layout_width="wrap_content"
+			     android:layout_height="wrap_content"
+			     android:layout_gravity="center_horizontal"
+			     android:visibility="invisible" />
+      
+			 <TextView
+			     android:id="@+id/config_ing"
+			     android:visibility="gone"
+			     android:layout_width="wrap_content"
+			     android:layout_height="wrap_content"
+			     android:layout_gravity="bottom|center"
+			     android:gravity="center"
+			     android:text="@string/start_config_status"
+			     android:textColor="@color/night"
+			     android:textSize="16sp" />
+
+		   </LinearLayout>
+		   <Button
+		       android:id="@+id/start_config"
+		       android:padding="16dp"
+		       android:layout_width="fill_parent"
+		       android:layout_height="wrap_content"
+		       android:layout_alignParentBottom="true"
+		       android:layout_gravity="bottom|center_horizontal"
+		       android:text="@string/prepared"/>
+ 	    </RelativeLayout>	    	    	                
+	 </RelativeLayout>	    		    
+
+</LinearLayout>

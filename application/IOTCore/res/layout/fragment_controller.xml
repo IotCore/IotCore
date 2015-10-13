@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+       <TextView 
+           android:id="@+id/controller_device_name"
+           android:layout_width = "match_parent"
+           android:layout_height = "wrap_content"
+           android:text="Device"
+           />
+       <TextView
+           android:id="@+id/controller_device_id"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="id" />
+       <Button 
+           android:id="@+id/bt_gpio"
+           android:layout_width = "match_parent"
+           android:layout_height = "wrap_content"
+           android:layout_gravity="bottom"
+           android:text="GPIO Controller"
+           />    
+       <Button 
+           android:id="@+id/bt_camera"
+           android:layout_width = "match_parent"
+           android:layout_height = "wrap_content"
+           android:layout_gravity="bottom"
+           android:text="Camera Controller"
+           />
+</LinearLayout>

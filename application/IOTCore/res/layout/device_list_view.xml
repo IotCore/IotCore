@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/card_outer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="contentDescription" >
+
+    <LinearLayout
+        android:id="@+id/background"
+        style="@style/card_inner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <LinearLayout
+            android:id="@+id/ll_icon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical" >        
+		       <ImageView
+		        android:id="@+id/device_icon"
+		        android:layout_width="40dp"
+		        android:layout_height="40dp"
+		        android:maxHeight="@android:dimen/app_icon_size"
+		        android:maxWidth="@android:dimen/app_icon_size"
+		        android:src="@drawable/ic_launcher" />
+		</LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginLeft="4dp"
+            android:orientation="vertical" >
+            <TextView
+                android:id="@+id/product_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:textSize="14sp"
+                android:textColor="@color/night" />
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal">
+           		<TextView
+				    android:layout_width = "wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_gravity="top"
+				    android:text="NAME:"
+				    android:textColor="@color/night"
+				    android:textSize="14sp"
+				    android:visibility="gone" />		
+            	<TextView
+	                android:id="@+id/device_name"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_gravity="top"
+				    android:textColor="@color/night"
+				    android:textSize="18sp"
+				    android:singleLine="true" />
+			</LinearLayout>
+
+		    <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal"
+		        android:layout_marginLeft="10dp" 
+		        android:visibility="gone">
+           		<TextView
+				    android:layout_width = "wrap_content"
+				    android:layout_height="wrap_content"
+				    android:layout_gravity="top"
+				    android:text="SN:"
+				    android:textColor="@color/night"
+				    android:textSize="14sp" />		
+            <TextView
+                android:id="@+id/device_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="@string/app_name"
+                android:textColor="#acadac"
+                android:textSize="14sp" />
+           </LinearLayout>
+            
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+	
+    
