@@ -135,7 +135,10 @@ public class GpioAdapter extends BaseAdapter{
 			}});
 
 		gpioPWM = holder.getGpioPWMView();
-		gpioPWM.setOnClickListener(new OnClickListener(){
+		if(g.getGpio_number() <= 6)
+		{
+			gpioPWM.setVisibility(View.VISIBLE);
+			gpioPWM.setOnClickListener(new OnClickListener(){
 
 			@Override
 			public void onClick(View arg0) {
@@ -145,7 +148,11 @@ public class GpioAdapter extends BaseAdapter{
 				
 			}});
 		
-		
+		}
+		else
+		{
+			gpioPWM.setVisibility(View.INVISIBLE);
+		}
 		return v;
 	}
 	

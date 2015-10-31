@@ -466,7 +466,7 @@ public class AppContext extends Application implements IMqttConnectionStatusChan
 	{
 		DeviceListManager mDeviceListManager = DeviceListManager.getInstance(context);
 		mDeviceListManager.addDevice(device);
-//		subscribeDevice(device);
+		subscribeDevice(device);
 		
 	}
 	
@@ -529,12 +529,12 @@ public class AppContext extends Application implements IMqttConnectionStatusChan
 			if(devicelist.size()>0){
 				for(Deviceinfo d : devicelist)
 				{
-					for(String l: DeviceListManager.DeviceSubTopic)
-					{
+//					for(String l: DeviceListManager.DeviceSubTopic)
+//					{
 						if(d!=null){
 							subscribeDevice(d);
 						}
-					}
+//					}
 				}
 			}
 
@@ -548,7 +548,7 @@ public class AppContext extends Application implements IMqttConnectionStatusChan
 	private static void subscribeDevice(Deviceinfo d) {
 		// TODO Auto-generated method stub
 	      String[] topics = new String[1];
-	      topics[0] = d.getFeedId()+"/picture";
+	      topics[0] = d.getFeedId()+ AppConfig.config_topic_split + DeviceListManager.DeviceSubTopic[1];
 	      ActionListener al = new ActionListener(mAppContext, Action.SUBSCRIBE, mIotManager.getClientHandle(), topics);
 	      
 	      int qos = AppConfig.config_defaultQos;
@@ -558,7 +558,7 @@ public class AppContext extends Application implements IMqttConnectionStatusChan
 	private static void unsubscribeDevice(Deviceinfo d) {
 		// TODO Auto-generated method stub
 	      String[] topics = new String[1];
-	      topics[0] = d.getFeedId()+"/picture";
+	      topics[0] = d.getFeedId()+ AppConfig.config_topic_split + DeviceListManager.DeviceSubTopic[1];
 	      ActionListener al = new ActionListener(mAppContext, Action.UNSUBSCRIBE, mIotManager.getClientHandle(), topics);
 	      
 	      int qos = AppConfig.config_defaultQos;
@@ -588,6 +588,7 @@ public class AppContext extends Application implements IMqttConnectionStatusChan
 	public static void SendGPIOCommand(Deviceinfo mCurrentDevice, int gpioNum, int type) {
 		// TODO Auto-generated method stub
 	// fill the mCommandManager  with gpio command		
+			CommandManager.getCommandManager(mAppContext).setWorkType(CommandManager.GPIO_MODE);
 			byte[] payload = CommandManager.getCommandManager(mAppContext).toByteArray(CommandManager.GPIO_MODE, gpioNum, type);
 		    String[] args = new String[2];
 		    args[0] = "message";
@@ -637,6 +638,8 @@ public class AppContext extends Application implements IMqttConnectionStatusChan
 	public static void SendCaptureCommand(Deviceinfo mCurrentDevice) {
 		// TODO Auto-generated method stub
 	//// fill the mCommandManager  with capture command		
+		CommandManager.getCommandManager(mAppContext).setWorkType(CommandManager.PHOTO_MODE);
+
 		byte[] payload = CommandManager.getCommandManager(mAppContext).toByteArray(CommandManager.PHOTO_MODE, 0, 0);
 	    String[] args = new String[2];
 	    args[0] = "message";

@@ -106,9 +106,9 @@ public class CommandManager {
 					mByteBuf.put((byte)gpioNum);     // pin num
 					mByteBuf.put((byte)0x03);			// output
 					mByteBuf.put((byte)0x0);			// default 0
-					mByteBuf.put((byte)0x01);			// high level
+					mByteBuf.put((byte)0x01);			// polarity 
 					mByteBuf.put((byte)0x0);			// no pull
-					mByteBuf.putInt((int)0x00000001); // output enable
+					mByteBuf.putInt((int)0x00000001); // high level
 					mByteBuf.putShort((short)0);       // 
 					mByteBuf.putShort((short)0);
 					mByteBuf.putInt((int)0xffffffff);
@@ -125,9 +125,9 @@ public class CommandManager {
 					mByteBuf.put((byte)gpioNum);     // pin num
 					mByteBuf.put((byte)0x03);			// output
 					mByteBuf.put((byte)0x0);			// default 0
-					mByteBuf.put((byte)0x00);			// low level
+					mByteBuf.put((byte)0x01);			// output polarity
 					mByteBuf.put((byte)0x0);			// no pull
-					mByteBuf.putInt((int)0x00000001); // output enable
+					mByteBuf.putInt((int)0x00000000); // output level
 					mByteBuf.putShort((short)0);       // input high level
 					mByteBuf.putShort((short)0);       // input low level 
 					mByteBuf.putInt((int)0xffffffff);   //start time. 0xffffffff:current
@@ -144,7 +144,7 @@ public class CommandManager {
 					mByteBuf.put((byte)gpioNum);     // pin num
 					mByteBuf.put((byte)0x04);			// pwm
 					mByteBuf.put((byte)0x0);			// default 0
-					mByteBuf.put((byte)0x01);			// high level
+					mByteBuf.put((byte)0x01);			// polarity
 					mByteBuf.put((byte)0x0);			// no pull
 					mByteBuf.putInt((int)0x00320032); // pwm : duty:50% period: 50Hz
 					mByteBuf.putShort((short)0);       // input high level
@@ -166,6 +166,10 @@ public class CommandManager {
 			}
 		break;
 		case PHOTO_MODE:
+			mByteBuf.clear();
+			mByteBuf.putShort((short)0xBB); // BB 00 
+			mByteBuf.put((byte)0x0c);       //CMD: c
+			mByteBuf.put((byte)0);          // status: default 0
 			{
 				mByteBuf.putShort((short)0x23);  // cmd length: 
 				mByteBuf.put((byte)0x09);     // camera
@@ -184,8 +188,10 @@ public class CommandManager {
 				mByteBuf.put((byte)0x01);           // event_pended_flag
 				mByteBuf.put((byte)0x0);			// related gpio
 			}
-			tempByteArray = new byte[3];
-			tempByteArray[0] = 1;
+			position = mByteBuf.position();
+			tempByteArray = new byte[position];
+			mByteBuf.clear();
+			mByteBuf.get(tempByteArray, 0, position);
 			break;
 		default:
 			tempByteArray = new byte[3];

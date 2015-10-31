@@ -27,8 +27,8 @@ public class DeviceListManager{
 	public static final int DEVICE_TYPE_SMOKE_ALARM = 0x5000;
 	public static final int DEVICE_TYPE_AIR_CONDITIONER = 0x6000;
 	
-	public static final String DeviceSubTopic[] = {"state", "picture", "audio"};
-	public static final String DevicePubTopic[] = {"cmd"};
+	public static final String DeviceSubTopic[] = {"status", "photo", "pub_topic3"};
+	public static final String DevicePubTopic[] = {"io_ctrl"};
 
 	
 	private static volatile DeviceListManager __instance;

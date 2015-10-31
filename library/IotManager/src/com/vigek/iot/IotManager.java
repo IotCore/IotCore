@@ -46,7 +46,7 @@ public class IotManager {
 	
 	public void SendCommand(String feedId, byte[] payload, IMqttActionListener al, int qos, boolean retained ) {
 		// TODO Auto-generated method stub
-		String topic = feedId +"/cmd";
+		String topic = feedId +"/io_ctrl";
 		if (MqttConnectionManager.isConnected()) {
 			
 			mMqttConnectionManager.setPublishActionListener(al);
